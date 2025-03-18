@@ -20,9 +20,5 @@ $bc-consolidator-theme: mat.define-theme((
   @include mat.all-component-themes($bc-consolidator-theme);
 }
 
-// * {
-//   background-color: #FBFBFB;
-// }
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
