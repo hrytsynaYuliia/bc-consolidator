@@ -1,0 +1,13 @@
+<div class="wrap">
+  <app-search-filter></app-search-filter>
+  <div class="flights">
+    @for (flight of $flights(); track $index) {
+      @if($index < showCount) {
+        <app-flight-card [flight]="flight"></app-flight-card>
+      }
+    }
+    @if(showCount < $flights().length) {
+      <button mat-raised-button (click)="showMore()">Show More</button>
+    }
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="flight-info">
+    @for (flightItem of flight()?.flights; track $index) {
+      <app-flight-item [flightItem]="flightItem"></app-flight-item>
+    }
+
+  </div>
+  <div class="flight-price">
+    <div class="price">{{ flight()?.price | currency:'USD' }}</div>
+    <div class="message">Per Adult</div>
+    <div>
+      <button mat-raised-button (click)="handleBook()">Book</button>
+    </div>
+
+  </div>
+</div>

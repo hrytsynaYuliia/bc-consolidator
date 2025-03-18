@@ -1,0 +1,14 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  .flights {
+    width: 624px;
+  }
+}
+
+button {
+  width: 100%;
+}
+.mat-mdc-raised-button {
+  border-radius: 5px !important;
+}

@@ -1,0 +1,33 @@
+<div class="form-wrap" [formGroup]="travelerForm">
+  <div class="title">Traveler 1: Adult</div>
+  <div class="field-wrap">
+    <label >First Name</label>
+    <mat-form-field appearance="outline">
+      <input matInput type="text" [formControl]="travelerForm.controls['firstName']" placeholder="First Name">
+      @if (travelerForm.controls['firstName'].hasError('required')) {
+        <mat-error>First Name is required</mat-error>
+      }
+    </mat-form-field>
+  </div>
+  <div class="field-wrap">
+    <label >Last Name</label>
+    <mat-form-field appearance="outline">
+      <input matInput type="text" [formControl]="travelerForm.controls['lastName']" placeholder="Last Name">
+      @if (travelerForm.controls['lastName'].hasError('required')) {
+        <mat-error>Last Name is required</mat-error>
+      }
+    </mat-form-field>
+  </div>
+  <div class="field-wrap">
+    <label >Gender</label>
+    <mat-radio-group [formControl]="travelerForm.controls['gender']">
+      <mat-radio-button checked=true [value]="'male'">Male</mat-radio-button>
+      <mat-radio-button [value]="'female'">Female</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+</div>
+<div class="buttons">
+  <button mat-raised-button (click)="handleBack()">Back</button>
+  <button mat-raised-button class="submit" (click)="submit()">Confirm</button>
+</div>

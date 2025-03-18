@@ -1,0 +1,15 @@
+.container {
+    width: 206px;
+    padding: 16px;
+    border: 1px solid #E2E0E3;
+    border-radius: 12px;
+
+    mat-slider {
+      width: 190px;
+    }
+}
+
+.stops-container {
+  display: flex;
+  flex-direction: column;
+}

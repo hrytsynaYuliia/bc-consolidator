@@ -1,0 +1,29 @@
+<div class="wrap">
+  <div class="logo">
+    <img [alt]="flightItem()?.airline" [src]="getLogoSrc()">
+  </div>
+  <div class="item">
+    <div class="item-time">
+      {{ (flightItem()?.departure_date + 'T' + flightItem()?.departure_time) | date:'h:mm a' }}
+    </div>
+    <div class="item-description">
+      {{ flightItem()?.departure_airport }} &#9679; {{ flightItem()?.departure_date | date:'LLL dd'}}
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-time">
+      {{ flightItem()?.arrival_time}}
+    </div>
+    <div class="item-description">
+      {{ flightItem()?.arrival_airport }} &#9679; {{ flightItem()?.arrival_date | date:'LLL dd'}}
+    </div>
+  </div>
+  <div class="item">
+    <div class="item-time">
+      {{ getDuration() }}
+    </div>
+    <div class="item-description">
+      {{ getStops() }}
+    </div>
+  </div>
+</div>

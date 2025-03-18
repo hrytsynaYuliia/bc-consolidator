@@ -1,0 +1,30 @@
+<div class="container">
+      <div>Sort By:</div>
+      <mat-form-field appearance="outline">
+        <mat-select [formControl]="sortByControl">
+          @for (option of sortByOptions; track option) {
+            <mat-option [value]="option.value">{{ option.description }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <div>Price:</div>
+      <div>{{priceControlStart.value ? priceControlStart.value : getPriceRange().lowest}} - {{ priceControlEnd.value ? priceControlEnd.value : getPriceRange().highest }}</div>
+        <mat-slider
+        [max]="getPriceRange().highest"
+        [min]="getPriceRange().lowest"
+        [step]=".01">
+        <input matSliderStartThumb [formControl]="priceControlStart">
+        <input matSliderEndThumb [formControl]="priceControlEnd">
+    </mat-slider>
+
+    <div>Stops</div>
+    <div class="stops-container" [formGroup]="stopsGroup">
+      <mat-checkbox [formControl]="stopsGroup.controls['all']">All stops</mat-checkbox>
+      <mat-checkbox [formControl]="stopsGroup.controls['none']">Nonstop</mat-checkbox>
+      <mat-checkbox [formControl]="stopsGroup.controls['one']">1 stop</mat-checkbox>
+      <mat-checkbox [formControl]="stopsGroup.controls['two']">2 stops</mat-checkbox>
+    </div>
+
+
+</div>
